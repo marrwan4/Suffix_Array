@@ -1,3 +1,8 @@
+// 20230381 - Marwan Hussein Galal
+// 20230274 - Amr Salah
+// 20230040 - Adam Samir
+// 20230286 - Fras Adham
+
 #include<iostream>
 
 using namespace std;
@@ -8,9 +13,9 @@ private:
     // Structure to store information of a suffix and its ranks
     struct Entry
     {
-        int ind;
-        int r1;
-        int r2;
+        int ind; // Suffix index
+        int r1; // the current order of the suffix.
+        int r2; // the order that will be used in case there is a tie in r1.
     };
     char* array;
     int* suffixArray;
@@ -41,7 +46,8 @@ private:
     typedef bool (*comparatorFunction)(const Entry&, const Entry&);
 
     // Compare by (r1, r2)
-    static bool cmp_r1r2(const Entry &a, const Entry &b) {
+    static bool cmp_r1r2(const Entry &a, const Entry &b)
+    {
         if (a.r1 < b.r1)
         {
             return true;
@@ -54,7 +60,8 @@ private:
     }
 
     // Compare by index
-    static bool cmp_ind(const Entry &a, const Entry &b) {
+    static bool cmp_ind(const Entry &a, const Entry &b)
+    {
         return a.ind < b.ind;
     }
 
