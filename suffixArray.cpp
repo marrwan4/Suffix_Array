@@ -268,6 +268,17 @@ public:
         }
         cout << endl;
     }
+
+    // Accessor helpers for testing
+    const int* Data() const
+    {
+        return suffixArray;
+    }
+
+    const int Size() const
+    {
+        return length;
+    }
     // Destructor to free allocated memory
     ~SuffixArray()
     {
@@ -276,6 +287,7 @@ public:
     }
 };
 
+#ifndef SUFFIX_ARRAY_TEST
 int main()
 {
     SuffixArray t("ACGACTACGATAAC$");
@@ -286,6 +298,7 @@ int main()
 
     return 0;
 }
+#endif
 
 // The following is just illustration for your help only, nothing required about it. Check lecture.
 ///////////////////////////////////////////////////////////////////////////////////////////////////
